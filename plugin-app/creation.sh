@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.udemy.app -DartifactId=plugin-app -Dversion=1.0 -DpackageName=com.udemy.app -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- uncomment this for normal injection -->
+<!-- beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
+
+    <bean id="student_bean" class="com.udemy.Student" />
+
+    <bean id="student_prototype_bean" class="com.udemy.prototype.Student" scope="prototype">
+        <property name="name" value="John" />
+    </bean>
+    <bean id="student_singleton_bean" class="com.udemy.prototype.Student" scope="singleton">
+        <property name="name" value="John" />
+    </bean>
+
+    <bean id="student_init_bean" class="com.udemy.init.Student" scope="singleton" init-method="studentInit" destroy-method="studentDestroy">
+        <property name="name" value="John" />
+    </bean>
+
+    <bean id="address_injection_bean" class="com.udemy.injection.Address" scope="prototype">
+        <property name="address" value="Default Address 1" />
+    </bean>
+    <bean id="student_injection_bean" class="com.udemy.injection.Student" scope="prototype">
+        <property name="name" value="John" />
+        <constructor-arg ref="address_injection_bean" />
+    </bean -->
+<!-- uncomment this for annotation based injection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="address_injection_annotation_bean" class="com.udemy.injection.annotations.Address" scope="prototype">
+        <property name="address" value="Default Address 1" />
+    </bean>
+    <bean id="student_injection_annotation_bean" class="com.udemy.injection.annotations.Student" scope="prototype">
+        <property name="name" value="John" />
+    </bean>
+
+</beans>
